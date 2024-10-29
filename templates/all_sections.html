@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Sections</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course Number</th>
+            <th>Section</th>
+            <th>Semester</th>
+            <th>Year</th>
+            <th>Instructor</th> <!-- Add a column for the instructor -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for section in sections %}
+        <tr>
+            <td><a href="{{ url_for('course_info', course_number=section.course_number) }}">{{ section.course_number }}</a></td>
+            <td>{{ section.section_identifier }}</td>
+            <td>{{ section.semester }}</td>
+            <td>{{ section.year }}</td>
+            <td><a href="{{ url_for('instructor', instructor=section.instructor) }}">{{ section.instructor }}</a></td> <!-- Link to the instructor -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

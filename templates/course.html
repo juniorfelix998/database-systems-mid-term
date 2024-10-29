@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Course: {{ course.course_name }}</h2>
+<p><strong>Course Number:</strong> {{ course.course_number }}</p>
+<p><strong>Credit Hours:</strong> {{ course.credit_hours }}</p>
+<p><strong>Department:</strong> {{ course.department }}</p>
+
+<h3>Prerequisites</h3>
+<ul>
+    {% for prereq in prerequisites %}
+    <li>{{ prereq.prerequisite_number }}</li>
+    {% else %}
+    <p>No prerequisites.</p>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('courses_all') }}">Back to Courses</a>
+{% endblock %}

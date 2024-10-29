@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Student Details</h2>
+<p><strong>Student Number:</strong> {{ student.student_number }}</p>
+<p><strong>Name:</strong> {{ student.name }}</p>
+<p><strong>Class:</strong> {{ student.class_number }}</p>
+<p><strong>Major:</strong> {{ student.major }}</p>
+
+<h3>Grades</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Number</th>
+            <th>Section Identifier</th>
+            <th>Instructor</th>
+            <th>Credit Hours</th>
+            <th>Semester</th>
+            <th>Year</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if grades %}
+            {% for grade_report, section, course in grades %}
+                <tr>
+                    <td>{{ course.course_name }}</td>
+                    <td>{{ course.course_number }}</td>
+                    <td>{{ section.section_identifier }}</td>
+                    <td>{{ section.instructor }}</td>
+                    <td>{{ course.credit_hours }}</td>
+                    <td>{{ section.semester }}</td>
+                    <td>{{ section.year }}</td>
+                    <td>{{ grade_report.grade }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="8">No grades available.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('students_all') }}">Back to Students</a>
+{% endblock %}

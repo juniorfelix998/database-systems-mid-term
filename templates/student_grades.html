@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Grades for {{ student.name }}</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Number</th>
+            <th>Section</th>
+            <th>Instructor</th>
+            <th>Credit Hours</th>
+            <th>Semester</th>
+            <th>Year</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for grade in grades %}
+        <tr>
+            <td>{{ grade.course_name }}</td>
+            <td><a href="{{ url_for('course_info', course_number=grade.course_number) }}">{{ grade.course_number }}</a></td>
+            <td>{{ grade.section_identifier }}</td>
+            <td><a href="{{ url_for('instructor', instructor=grade.instructor) }}">{{ grade.instructor }}</a></td>
+            <td>{{ grade.credit_hours }}</td>
+            <td>{{ grade.semester }}</td>
+            <td>{{ grade.year }}</td>
+            <td>{{ grade.grade }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -19,7 +19,7 @@ class Course(db.Model):
     __tablename__ = "courses"
     id = db.Column(db.Integer, primary_key=True)
     course_name = db.Column(db.String(100), nullable=False)
-    course_number = db.Column(db.String(10), unique=True, nullable=False,index=True)
+    course_number = db.Column(db.String(10), unique=True, nullable=False, index=True)
     credit_hours = db.Column(db.Integer, nullable=False)
     department = db.Column(db.String(50), nullable=False)
     sections = db.relationship("Section", backref="course", lazy=True)
@@ -29,7 +29,7 @@ class Course(db.Model):
 class Section(db.Model):
     __tablename__ = "sections"
     id = db.Column(db.Integer, primary_key=True)
-    section_identifier = db.Column(db.Integer, unique=True, nullable=False,index=True)
+    section_identifier = db.Column(db.Integer, unique=True, nullable=False, index=True)
     course_number = db.Column(
         db.String(10), db.ForeignKey("courses.course_number"), nullable=False
     )

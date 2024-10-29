@@ -12,6 +12,11 @@
             <a class="navbar-brand" href="{{ url_for('index') }}">School Database</a>
             <div class="navbar-nav">
                 <a class="nav-link" href="{{ url_for('add_student') }}">Add Student</a>
+                <a class="nav-link" href="{{ url_for('add_course') }}">Add Course</a>
+                <a class="nav-link" href="{{ url_for('add_prerequisite') }}">Add Prerequisite</a>
+                <a class="nav-link" href="{{ url_for('students_all') }}">All Students</a>
+                <a class="nav-link" href="{{ url_for('courses_all') }}">All Courses</a>
+                <a class="nav-link" href="{{ url_for('all_sections') }}">All Sections</a>
                 <!-- Add links for adding courses, sections, grade reports, and prerequisites -->
             </div>
         </nav>
