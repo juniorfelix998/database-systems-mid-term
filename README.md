@@ -1,5 +1,4 @@
-# **School Management System**
-
+# **Simple Student Management System
 This project is a simple web-based school management system developed as a Flask application. It allows users to view
 and manage information about students, courses, instructors, and grades, following a relational database schema. 
 The application follows RESTful design practices and is styled with Bootstrap for a clean, responsive UI.
