@@ -10,11 +10,11 @@ This project is designed for a somple class mid-term assignment for Database Sys
 **Table of Contents**
 
 * [Project Structure](#project-structure)
-* Setup and Installation
-* Database Schema
-* API Endpoints
-* Usage
-* Technologies Used
+* [Setup and Installation](#setup-and-installation)
+* [Database Schema](#database-schema)
+* [API Endpoints](#api-endpoints)
+* [Usage](#usage)
+* [Technologies Used](#technologies-used)
 
 
 ### **Project Structure**
